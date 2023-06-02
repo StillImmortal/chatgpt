@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.transition-menu {
+  transition-duration: .3s;
+  transition-property: opacity, transform, visibility;
+}
+
+.menu-link {
+  @apply flex items-center text-sm transition-colors hover:bg-gray-800 hover:cursor-pointer text-gray-200 p-3 gap-3
+}
