@@ -24,7 +24,7 @@ const RootLayout: FC<RootProps> = ({ children }) => {
 
       </head>
 
-      <body>
+      <body className="overflow-hidden">
         <Provider store={store}>
           <Sidebar />
           {children}

@@ -20,3 +20,7 @@
 .menu-link {
   @apply flex items-center text-sm transition-colors hover:bg-gray-800 hover:cursor-pointer text-gray-200 p-3 gap-3
 }
+
+.flex-center {
+  @apply flex items-center justify-center
+}
