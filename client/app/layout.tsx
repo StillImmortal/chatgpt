@@ -5,8 +5,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import "../public/index.css"
-
-import Sidebar from '@/components/Sidebar';
 import state from '@/state';
 
 const store = configureStore({
@@ -26,8 +24,9 @@ const RootLayout: FC<RootProps> = ({ children }) => {
 
       <body className="overflow-hidden">
         <Provider store={store}>
-          <Sidebar />
-          {children}
+          <div className="relative flex w-screen h-screen overflow-hidden z-0">
+            {children}
+          </div>
         </Provider>
       </body>
 

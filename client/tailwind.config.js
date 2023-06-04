@@ -14,7 +14,8 @@ module.exports = {
         "gray-900": "rgb(32,33,35)",
       },
       boxShadow: {
-        "fade-in" : "box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)",
+        "xs": "0 0 15px rgba(0,0,0,.1)",
+        "fade-in" : "0 2px 4px rgba(0, 0, 0, 0.2)",
       }
     },
   },

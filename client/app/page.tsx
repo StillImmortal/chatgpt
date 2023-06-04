@@ -1,31 +1,26 @@
 "use client"
 
-import { useSelector } from 'react-redux'
+import { useMediaQuery } from '@mui/material'
 
-import { RootState } from '@/state'
+import Prompt from '@/components/Prompt'
+import Sidebar from '@/components/Sidebar'
+import MobileSidebar from '@/components/MobileSidebar'
+import MobileHeader from '@/components/MobileHeader'
 
 const Home = () => {
-  const { isMenuOpen } = useSelector((state: RootState) => state)
+  const isNonMobileScreens = useMediaQuery("(min-width:768px)");
 
   return (
-    <div className={`absolute overflow-y-scroll md:ml-[16rem] mt-11 md:mt-0 p-2 inset-0`}>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos quibusdam architecto voluptatem asperiores corrupti accusantium hic eveniet voluptatum autem qui vitae exercitationem, harum quas tempore ipsam quam modi error?</div>
-    </div>
+      <>
+        {!isNonMobileScreens && <MobileHeader />}
+        {isNonMobileScreens ? <Sidebar /> : <MobileSidebar />}
+        <div className="relative h-full flex-1 max-w-full pb-8 bg-blue-200 overflow-y-auto">
+          <div className="relative h-full w-full">
+
+            <Prompt />
+          </div>
+        </div>
+      </>
   )
 }
 
